@@ -1,7 +1,8 @@
 package jamesianjava;
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
-
+import org.lwjgl.input.Mouse;
+import org.lwjgl.input.Keyboard;
 
 
 public class Play extends BasicGameState{
