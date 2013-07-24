@@ -26,9 +26,11 @@ public class Menu extends BasicGameState{
 
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException{
 		g.drawImage(jwthing, jwthingX, jwthingY);
-	
-	
-	
+		g.setBackground(Colours.backgroundmenu);
+		g.setColor(Colours.backgroundmenu2);
+		g.fillRoundRect(100, 100, 350, 500, 10);
+		g.setColor(Colours.base2);
+		g.fillRect(120, 120, 310, 460);
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
@@ -38,20 +40,36 @@ public class Menu extends BasicGameState{
 		
 		if(input.isKeyDown(Input.KEY_W)){
 			jwthingY -= 2;
+		}else{
+			if(input.isKeyDown(Input.KEY_UP)){
+				jwthingY -= 3;
+			}
 		}
 		
 		if(input.isKeyDown(Input.KEY_A)){
 			jwthingX -= 2;
+		}else{
+			if(input.isKeyDown(Input.KEY_LEFT)){
+				jwthingY -= 3;
+			}
 		}
 		if(input.isKeyDown(Input.KEY_D)){
 			jwthingX += 2;
-			System.out.println("Vlee # D");
+			//System.out.println("Vlee # D");
 		
+		}else{
+			if(input.isKeyDown(Input.KEY_RIGHT)){
+				jwthingY -= 3;
+			}
 		}
 		
 		if(input.isKeyDown(Input.KEY_S)){
 			jwthingY += 2;
-			System.out.println("Vlee # S");
+			//System.out.println("Vlee # S");
+		}else{
+			if(input.isKeyDown(Input.KEY_DOWN)){
+				jwthingY -= 3;
+			}
 		}
 	
 	}

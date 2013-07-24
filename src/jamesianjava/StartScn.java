@@ -2,7 +2,6 @@ package jamesianjava;
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 import org.lwjgl.input.Mouse;
-import org.lwjgl.input.Keyboard;
 
 
 public class StartScn extends BasicGameState{
@@ -14,6 +13,10 @@ public class StartScn extends BasicGameState{
 		
 		
 	}
+	
+	
+	
+	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException{	
 
 	
@@ -22,11 +25,13 @@ public class StartScn extends BasicGameState{
 	
 	}
 
+	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException{
 	
 		
-	Image ssbg = new Image("images/background.png");
-	g.drawImage(ssbg, 0, 0);	
+	
+	g.setBackground(Colours.backgroundstartscn);
+	g.drawImage(Sprites.ssbg, 0, 0);	
 	g.setColor(new Color(Color.blue));
 	g.drawString("DELAYCOUNT IIIS:", 100, 75);
 	g.drawString("#Frames Delay:" + delaycount1, 575, 75);
@@ -37,6 +42,7 @@ public class StartScn extends BasicGameState{
 	
 	}
 
+	@Override
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
 		int mousex = Mouse.getX();
 		int mousey = Mouse.getY();
@@ -44,11 +50,11 @@ public class StartScn extends BasicGameState{
 		
 		delaycount1 += 1;
 		
-		if(delaycount1 == 500){
+		if(delaycount1 == 120){
 			
 			info = " ";
 			}
-		if(delaycount1 == 1000){
+		if(delaycount1 == 240){
 			
 			info = "Press Enter To Continue!";
 			delaycount1 = 0;		
@@ -65,9 +71,9 @@ public class StartScn extends BasicGameState{
 		}
 		}
 		
-		
 	}
 	
+	@Override
 	public int getID(){
 		return 0;
 	}
