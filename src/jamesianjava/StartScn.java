@@ -27,11 +27,11 @@ public class StartScn extends BasicGameState{
 
 	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException{
-	
+	Sprites sprites = new Sprites();
 		
 	
 	g.setBackground(Colours.backgroundstartscn);
-	g.drawImage(Sprites.ssbg, 0, 0);	
+	g.drawImage(sprites.ssbg, 0, 0);	
 	g.setColor(new Color(Color.blue));
 	g.drawString("DELAYCOUNT IIIS:", 100, 75);
 	g.drawString("#Frames Delay:" + delaycount1, 575, 75);
